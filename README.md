@@ -1,6 +1,6 @@
-# arduino-cli instaling script
+# arduino-cli installing script
 
-This installs _arduino-cli_ v1.1.1 for Windows x64.
+This installs _arduino-cli_ v1.1.1 and adds it to _PATH_ in Windows x64
 
 Follow these steps:
 
