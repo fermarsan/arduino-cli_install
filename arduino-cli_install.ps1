@@ -16,7 +16,11 @@ if (-not (Get-Command arduino-cli)) { # if the command doesn't exist
     [System.Environment]::SetEnvironmentVariable("PATH", $env:PATH, "Machine")
 }
 
+# install AVR core
 arduino-cli core install arduino:avr
+
+# restore de execution policy
+Set-ExecutionPolicy Restricted
 
 Write-Output "Process completed."
 Read-Host -Prompt "Press any key to continue"
