@@ -25,7 +25,7 @@ if (-not (Get-Command arduino-cli)) { # if the command doesn't exist
 arduino-cli core install arduino:avr
 
 # restore de execution policy
-Set-ExecutionPolicy AllSigned
+Set-ExecutionPolicy Restricted
 
 Write-Output "Process completed."
 Read-Host -Prompt "Press any key to continue"
