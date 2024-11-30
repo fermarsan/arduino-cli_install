@@ -14,7 +14,7 @@ if (-not (Test-Path -Path 'C:\arduino-cli')) {    # if the folder doesn't exist
     Expand-Archive -Path '..\arduino-cli.zip' -DestinationPath 'C:\arduino-cli'
 } 
 
-# Create arduino-cli symlink
+# Create arduino-cli symlink (add it to PATH)
 if (-not (Get-Command arduino-cli)) { # if the command doesn't exist
     Write-Output "Creating arduino-cli symlink..."
     $env:PATH += ";C:\arduino-cli\"
