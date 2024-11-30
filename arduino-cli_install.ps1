@@ -4,19 +4,19 @@ Set-PSDebug -Trace 0    #echo off
 
 # Download arduino-cli.zip from official page
 if (-not (Test-Path -Path '..\arduino-cli.zip')) {
-    Write-Output 'Downloading arduino-cli.zip from official page...'
+    Write-Output '\nDownloading arduino-cli.zip from official page...'
     Invoke-WebRequest 'https://downloads.arduino.cc/arduino-cli/arduino-cli_latest_Windows_64bit.zip' -OutFile '..\arduino-cli.zip'
 }
 
 # Unzip arduino-cli.zip to C:\arduino-cli
 if (-not (Test-Path -Path 'C:\arduino-cli')) {    # if the folder doesn't exist
-    Write-Output 'Unzipping arduino-cli.zip to C:\arduino-cli...'
+    Write-Output '\nUnzipping arduino-cli.zip to C:\arduino-cli...'
     Expand-Archive -Path '..\arduino-cli.zip' -DestinationPath 'C:\arduino-cli'
 } 
 
 # Create arduino-cli symlink (add it to PATH)
 if (-not (Get-Command arduino-cli)) { # if the command doesn't exist
-    Write-Output "Creating arduino-cli symlink..."
+    Write-Output "\nCreating arduino-cli symlink..."
     $env:PATH += ";C:\arduino-cli\"
     [System.Environment]::SetEnvironmentVariable("PATH", $env:PATH, "Machine")
 }
@@ -27,5 +27,5 @@ arduino-cli core install arduino:avr
 # restore de execution policy
 Set-ExecutionPolicy Restricted
 
-Write-Output "Process completed."
-Read-Host -Prompt "Press any key to continue"
+Write-Output "\nProcess completed."
+Read-Host -Prompt "\nPress any key to continue"
