@@ -2,9 +2,9 @@ Set-PSDebug -Trace 0    #echo off
 
 # this is a batch file to automate the installing of arduino-cli on Windows
 
-# Download arduino-cli.zip from official page
+# Download arduino-cli.zip from the official page
 if (-not (Test-Path -Path "..\arduino-cli.zip")) {  # if the .zip file doesn't exist
-    Write-Output "`nDownloading arduino-cli.zip from official page..."
+    Write-Output "`nDownloading arduino-cli.zip from the official page..."
     Invoke-WebRequest "https://downloads.arduino.cc/arduino-cli/arduino-cli_latest_Windows_64bit.zip" -OutFile "..\arduino-cli.zip"
 }
 
