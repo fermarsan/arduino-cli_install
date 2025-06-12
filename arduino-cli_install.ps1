@@ -20,7 +20,10 @@ if (-not (Get-Command arduino-cli)) { # if the command doesn't exist
     $env:PATH += ";C:\arduino-cli\"
     [System.Environment]::SetEnvironmentVariable("PATH", $env:PATH, "Machine")
 }
-
+else {
+    
+        Write-Output "`narduino-cli is already installed."
+}
 # install AVR core
 arduino-cli core install arduino:avr
 
